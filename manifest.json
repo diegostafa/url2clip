@@ -1,7 +1,7 @@
   {
     "name": "url2clip",
     "version": "1.0",
-    "description": "This extension simply copies the current tab url in your clipboard",
+    "description": "This extension copies the current tab url in your clipboard",
     "browser_action": {
       "default_icon": "icons/copy-icon-white-16.png"
     },
@@ -10,14 +10,25 @@
       "48": "icons/copy-icon48.png",
       "128": "icons/copy-icon128.png"
     },
+    
+    "commands": {
+			"_execute_browser_action": {
+    			"suggested_key": "Ctrl+Shift+L",
+    			"description": "Copy tab url"
+    		}
+    },
+    "browser_action": {},
+
     "background": {
       "scripts": [
         "background.js"
       ],
       "persistent": false
     },
+
     "manifest_version": 2,
     "permissions": [
+      "activeTab",
       "tabs",
 	  "http://*/",
 	  "https://*/"
